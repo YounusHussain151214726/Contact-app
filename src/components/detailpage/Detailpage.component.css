@@ -1,0 +1,29 @@
+.detailcontainer{
+    border: 2px solid green;
+width: 50rem;
+margin: 0 auto;
+margin-top: 10rem;
+padding: 1rem;
+text-align: center;
+}
+.buttons-container,.action{
+    border: 2px solid red;
+    display: flex;
+    justify-content: space-between;
+}
+.action{
+width: 6rem;
+}
+.delogo{
+    margin: 0 auto;
+    margin-top: 2rem;
+    border: 2px solid red;
+  width: 5rem;
+  background-color: rgb(243, 243, 20);
+  height: 5rem;
+  border-radius: 50%;
+  text-align: center;
+}
+.dlt,.edt,.back{
+    cursor: pointer;
+}

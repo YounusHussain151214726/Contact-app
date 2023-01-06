@@ -1,0 +1,28 @@
+.contact-container {
+  display: flex;
+flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contactcard-container {
+  border: 2px solid green;
+  width: 20rem;
+  /* height: arem; */
+  margin-top: 1rem;
+  border-radius: 0.4rem;
+  padding: 1rem;
+
+  display: flex;
+}
+.logo {
+  border: 2px solid red;
+  width: 2rem;
+  background-color: rgb(243, 243, 20);
+  height: 2rem;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.name {
+  margin-left: 1rem;
+}
