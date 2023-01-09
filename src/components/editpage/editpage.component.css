@@ -1,14 +1,15 @@
 .detailcontainer{
-width: 50rem;
+    border: 2px solid rgb(52, 53, 52);
+width: 25rem;
 margin: 0 auto;
 margin-top: 10rem;
 padding: 1rem;
 text-align: center;
+border-radius: .5rem;
 }
 .buttons-container,.action{
     display: flex;
     justify-content: space-between;
-align-items: center;
 }
 .action{
 width: 6rem;
@@ -27,7 +28,18 @@ width: 6rem;
 .detlogo{
     font-size: 1.5rem;
 }
-.dlt,.edt,.back{
-    font-size: 1rem;
+.dlt,.edit,.back{
     cursor: pointer;
+}
+
+.fname ,.lname ,.phone ,.email{
+    width: 20rem;
+    height: 2rem;
+    margin: 1rem;
+font-size: 1.2rem;
+padding: .2rem;
+}
+
+.edit:hover{
+    text-decoration: underline;
 }

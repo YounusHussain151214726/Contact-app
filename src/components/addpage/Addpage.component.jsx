@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import "./addpage.component.css";
 
-
-const INITIAL_FORM_DATA  = {
+const INITIAL_FORM_DATA = {
   fname: "",
   lname: "",
   phone: "",
   email: "",
-}    
+};
 
 const Addpage = () => {
   const [form, setForm] = useState(INITIAL_FORM_DATA);
@@ -19,24 +18,28 @@ const Addpage = () => {
     setForm({ ...form, [e.target.name]: e.target.value.trim() });
   };
 
+
+
+
   //Save form Data
   const savedFormData = (e) => {
     e.preventDefault();
-    console.log(form)
-    console.log("saveInLOcal", saveInLOcal) 
-    if(form.fname && form.lname && form.phone && form.email !=='' ){
-      setSaveInLocal([...saveInLOcal, form])
-      localStorage.setItem("addToContact", JSON.stringify([...saveInLOcal, form]));   
-      setForm(INITIAL_FORM_DATA)  
-    }
-  
-  };
 
+    if (form.fname && form.lname && form.phone && form.email !== "") {
+      setSaveInLocal([...saveInLOcal, form]);
+      localStorage.setItem(
+        "addToContact",
+        JSON.stringify([...saveInLOcal, form])
+      );
+      setForm(INITIAL_FORM_DATA);
+    }
+  };
 
   return (
     <div className="addpage-container">
       <div className="add-container">
-        <form >
+<h2>Create New Contact</h2>
+        <form>
           {/* firstname */}
           <div className="fname">
             <input
@@ -81,8 +84,8 @@ const Addpage = () => {
             />
           </div>
 
-          <button type="submit" onClick={savedFormData}>
-            Save
+          <button className="addbtn" type="submit" onClick={savedFormData}>
+            Add +
           </button>
         </form>
       </div>

@@ -7,7 +7,7 @@ const Norecord=()=>{
         <>
 <section className='conatiner'>
 <h2>No Record Found</h2>
-<AddButton />
+{/* <AddButton title={title} onhandle={onhandle} classname='add-button' /> */}
 </section>
 
         </>
