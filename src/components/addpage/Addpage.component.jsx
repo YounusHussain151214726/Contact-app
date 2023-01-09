@@ -23,10 +23,14 @@ const Addpage = () => {
   const savedFormData = (e) => {
     e.preventDefault();
     console.log(form)
-    console.log("saveInLOcal", saveInLOcal)
-setSaveInLocal([...saveInLOcal, form])
-    localStorage.setItem("addToContact", JSON.stringify([...saveInLOcal, form])); 
-    };
+    console.log("saveInLOcal", saveInLOcal) 
+    if(form.fname && form.lname && form.phone && form.email !=='' ){
+      setSaveInLocal([...saveInLOcal, form])
+      localStorage.setItem("addToContact", JSON.stringify([...saveInLOcal, form]));   
+      setForm(INITIAL_FORM_DATA)  
+    }
+  
+  };
 
 
   return (

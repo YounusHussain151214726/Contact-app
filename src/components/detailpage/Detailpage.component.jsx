@@ -1,49 +1,70 @@
 import "./Detailpage.component.css";
-import { useParams } from "react-router-dom";
+import { useParams , useNavigate } from "react-router-dom";
 import { useState,useEffect } from "react";
 
 
 const DetailPage = () => {
-    const params = useParams()
-    const {id} = params
-const [getFromlocal , setGetFromLocal] = useState([])
-    console.log(id)
+    const params = useParams();
+    const navigate = useNavigate();
+    const {id} = params;
 
+const [getFromlocal , setGetFromLocal] = useState([])
+    
 useEffect(()=>{
 if(localStorage.getItem('addToContact')){
 setGetFromLocal(JSON.parse(localStorage.getItem('addToContact')))
 }
 },[])
 
+//return to back
+const GOBACK=()=>{
+navigate(-1);
+}
+
+//delete 
+const Delete = () =>{
+const forDel = getFromlocal.filter((a)=>{
+  return a.email !== id
+})
+
+if(forDel){
+  localStorage.setItem("addToContact", JSON.stringify(forDel)); 
+navigate(-1)
+}
+
+console.log(forDel)
 console.log(getFromlocal)
 
-return (
+}
 
-    
+
+
+
+return (    
 <>
-{getFromlocal.map((data)=>{
-       const {email}=data
-       console.log(email == id)
-return (
-    
-        <div className="detailcontainer"> 
+{getFromlocal.map((data)=>(
+data.email === id ? (
+
+<>   
+        <div className="detailcontainer" key={data.email}> 
       <div className="buttons-container">
-        <h1 className="back">⬅</h1>
+        <h1 className="back" onClick={GOBACK}>⬅</h1>
         <div className="action">
           {" "}
-          <h4 className="dlt">Delete</h4>
+          <h4 className="dlt" onClick={Delete}>Delete</h4>
           <h4 className="edt">Edit</h4>
         </div>
       </div>
 
-      <div className="delogo"></div>
+      <div className="delogo"><h3 className="detlogo">{data.fname.slice(0,1)}</h3></div>
       <h3>{`${data.fname} ${data.lname}`}</h3>
       <div className="contact">
         <h2>📞 +{data.phone} </h2>
       </div>
     </div>
-    )
-})}
+  </>
+ ):''  
+))}
     </>
   );
 };

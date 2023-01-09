@@ -24,6 +24,10 @@ width: 6rem;
   border-radius: 50%;
   text-align: center;
 }
+
+.detlogo{
+    font-size: 1.5rem;
+}
 .dlt,.edt,.back{
     cursor: pointer;
 }
