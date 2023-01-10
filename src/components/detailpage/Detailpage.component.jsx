@@ -1,7 +1,7 @@
-import "./Detailpage.component.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import EditPage from "../editpage/Editpage.component";
+import "./Detailpage.component.css";
 
 const DetailPage = () => {
   const params = useParams();
@@ -44,14 +44,14 @@ const DetailPage = () => {
         data.email === id ? (
           isEdit === true ? (
             <>
-              <EditPage />
+              <EditPage data={data} setGet={setGetFromLocal} />
             </>
           ) : (
             <>
-              <div className="detailcontainer"  key={data.email}>
+              <div className="detailcontainer" key={data.email}>
                 <div className="buttons-container">
                   <h1 className="back" onClick={GOBACK}>
-                  Back
+                    Back
                   </h1>
                   <div className="action">
                     {" "}

@@ -1,22 +1,23 @@
-.detailcontainer{
-width: 50rem;
-margin: 0 auto;
-margin-top: 10rem;
-padding: 1rem;
-text-align: center;
+.detailcontainer {
+  width: 50rem;
+  margin: 0 auto;
+  margin-top: 10rem;
+  padding: 1rem;
+  text-align: center;
 }
-.buttons-container,.action{
-    display: flex;
-    justify-content: space-between;
-align-items: center;
+.buttons-container,
+.action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.action{
-width: 6rem;
+.action {
+  width: 6rem;
 }
-.delogo{
-    margin: 0 auto;
-    margin-top: 2rem;
-    border: 2px solid red;
+.delogo {
+  margin: 0 auto;
+  margin-top: 2rem;
+  border: 2px solid red;
   width: 5rem;
   background-color: rgb(243, 243, 20);
   height: 5rem;
@@ -24,10 +25,12 @@ width: 6rem;
   text-align: center;
 }
 
-.detlogo{
-    font-size: 1.5rem;
+.detlogo {
+  font-size: 1.5rem;
 }
-.dlt,.edt,.back{
-    font-size: 1rem;
-    cursor: pointer;
+.dlt,
+.edt,
+.back {
+  font-size: 1rem;
+  cursor: pointer;
 }

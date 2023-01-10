@@ -13,18 +13,20 @@ const Addpage = () => {
   // const [saveFormData, setSaveFormData] = useState(form);
   const [saveInLOcal, setSaveInLocal] = useState([]);
 
+  useEffect(() => {
+    if (localStorage.getItem("addToContact")) {
+      setSaveInLocal(JSON.parse(localStorage.getItem("addToContact")));
+    }
+  }, []);
+
   //get form data
   const formData = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value.trim() });
   };
 
-
-
-
   //Save form Data
   const savedFormData = (e) => {
     e.preventDefault();
-
     if (form.fname && form.lname && form.phone && form.email !== "") {
       setSaveInLocal([...saveInLOcal, form]);
       localStorage.setItem(
@@ -38,7 +40,7 @@ const Addpage = () => {
   return (
     <div className="addpage-container">
       <div className="add-container">
-<h2>Create New Contact</h2>
+        <h2>Create New Contact</h2>
         <form>
           {/* firstname */}
           <div className="fname">

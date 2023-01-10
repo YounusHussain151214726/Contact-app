@@ -1,16 +1,19 @@
-import { json, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Search from "../search/Search.component";
 import ContactList from "../contactlist/Contactlist.component";
 import AddButton from "../addbutton/Addbutton.component";
 import Norecord from "../no-record/Norecord.component";
 import "./home.component.css";
-import { useEffect, useState } from "react";
 
 const Home = () => {
   const navigate = useNavigate();
   const [preventLocalValue, setPreventLocalValue] = useState([]);
   const [searchField, setSearchField] = useState("");
-  const [filteredValue, setFilteredValue] = useState(preventLocalValue);
+  const [filteredValue, setFilteredValue] = useState([]);
+
+
+
 
   //get data from local
   useEffect(() => {
@@ -29,7 +32,6 @@ const Home = () => {
     });
     setFilteredValue(filterd);
   }, [searchField, preventLocalValue]);
-  console.log(filteredValue);
 
   //get Search value
   const onHandle = (e) => {
@@ -42,6 +44,8 @@ const Home = () => {
     navigate("/addContact");
   };
 
+  console.log(filteredValue.sort())
+
   return (
     <>
       <Search
@@ -52,7 +56,7 @@ const Home = () => {
       />
 
       {preventLocalValue.length === 0 || filteredValue.length === 0 ? (
-        <>
+<>
           <Norecord />
         </>
       ) : (

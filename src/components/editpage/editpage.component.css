@@ -1,23 +1,24 @@
-.detailcontainer{
-    border: 2px solid rgb(52, 53, 52);
-width: 25rem;
-margin: 0 auto;
-margin-top: 10rem;
-padding: 1rem;
-text-align: center;
-border-radius: .5rem;
+.detailcontainer {
+  border: 2px solid rgb(52, 53, 52);
+  width: 25rem;
+  margin: 0 auto;
+  margin-top: 10rem;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
 }
-.buttons-container,.action{
-    display: flex;
-    justify-content: space-between;
+.buttons-container,
+.action {
+  display: flex;
+  justify-content: space-between;
 }
-.action{
-width: 6rem;
+.action {
+  width: 6rem;
 }
-.delogo{
-    margin: 0 auto;
-    margin-top: 2rem;
-    border: 2px solid red;
+.delogo {
+  margin: 0 auto;
+  margin-top: 2rem;
+  border: 2px solid red;
   width: 5rem;
   background-color: rgb(243, 243, 20);
   height: 5rem;
@@ -25,21 +26,26 @@ width: 6rem;
   text-align: center;
 }
 
-.detlogo{
-    font-size: 1.5rem;
+.detlogo {
+  font-size: 1.5rem;
 }
-.dlt,.edit,.back{
-    cursor: pointer;
-}
-
-.fname ,.lname ,.phone ,.email{
-    width: 20rem;
-    height: 2rem;
-    margin: 1rem;
-font-size: 1.2rem;
-padding: .2rem;
+.dlt,
+.edit,
+.back {
+  cursor: pointer;
 }
 
-.edit:hover{
-    text-decoration: underline;
+.fname,
+.lname,
+.phone,
+.email {
+  width: 20rem;
+  height: 2rem;
+  margin: 1rem;
+  font-size: 1.2rem;
+  padding: 0.2rem;
+}
+
+.edit:hover {
+  text-decoration: underline;
 }

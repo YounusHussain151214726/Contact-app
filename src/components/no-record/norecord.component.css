@@ -1,19 +1,17 @@
-
-.conatiner{
-display:flex ;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+.conatiner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.add-button{
-    font-size: 1rem;
-    padding: .5rem;
-    font-weight: 800;
-    background-color: green;
-    color: white;
-    border-radius: .5rem;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    
+.add-button {
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-weight: 800;
+  background-color: green;
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
