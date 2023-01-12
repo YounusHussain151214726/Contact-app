@@ -2,6 +2,7 @@ import "./contactlist.component.css";
 import { useParams, NavLink } from "react-router-dom";
 
 const ContactList = ({ localValue }) => {
+
   //acending Sort by fname
   localValue.sort((a, b) => {
     if (a.fname > b.fname) {
@@ -11,7 +12,6 @@ const ContactList = ({ localValue }) => {
     }
   });
 
-  console.log(localValue);
 
   return (
     <div className="contact-container">

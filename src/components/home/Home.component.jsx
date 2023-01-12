@@ -7,17 +7,21 @@ import Norecord from "../no-record/Norecord.component";
 import "./home.component.css";
 
 const Home = () => {
+  //router method
   const navigate = useNavigate();
+
+  //state declaration
   const [preventLocalValue, setPreventLocalValue] = useState([]);
   const [searchField, setSearchField] = useState("");
   const [filteredValue, setFilteredValue] = useState([]);
 
-  //get data from local
+  //get data from localStorage
   useEffect(() => {
     if (localStorage.getItem("addToContact")) {
       setPreventLocalValue(JSON.parse(localStorage.getItem("addToContact")));
     }
   }, []);
+
 
   //filter by name
   useEffect(() => {
@@ -30,6 +34,7 @@ const Home = () => {
     setFilteredValue(filterd);
   }, [searchField, preventLocalValue]);
 
+  
   //get Search value
   const onHandle = (e) => {
     const searchValue = e.target.value.toLocaleLowerCase();

@@ -2,6 +2,8 @@ import "./editpage.component.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+
+//define initial value
 const INITIAL_FORM_DATA = {
   fname: "",
   lname: "",
@@ -10,17 +12,20 @@ const INITIAL_FORM_DATA = {
 };
 
 const EditPage = ({ data }) => {
+  
+  //router method
   const params = useParams();
   const navigate = useNavigate();
   const { id } = params;
+
+  //state declaration
+  const [getFromlocal, setGetFromLocal] = useState([]);
   const [form, setForm] = useState({
     fname: data.fname,
     lname: data.lname,
     email: data.email,
     phone: data.phone,
   });
-
-  const [getFromlocal, setGetFromLocal] = useState([]);
 
   useEffect(() => {
     if (localStorage.getItem("addToContact")) {
@@ -48,6 +53,7 @@ const EditPage = ({ data }) => {
     navigate(-1);
   };
 
+
   return (
     <>
       {getFromlocal.map((data) =>
@@ -64,7 +70,6 @@ const EditPage = ({ data }) => {
               </div>
               <h2>Edit Contact</h2>
 
-              {/* <div className="delogo"><h3 className="detlogo"></h3></div> */}
               <input
                 onChange={handleData}
                 name="fname"
