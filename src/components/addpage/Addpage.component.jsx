@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./addpage.component.css";
 
@@ -11,6 +12,7 @@ const INITIAL_FORM_DATA = {
 const Addpage = () => {
   const [form, setForm] = useState(INITIAL_FORM_DATA);
   // const [saveFormData, setSaveFormData] = useState(form);
+  const navigate = useNavigate();
   const [saveInLOcal, setSaveInLocal] = useState([]);
 
   useEffect(() => {
@@ -34,6 +36,7 @@ const Addpage = () => {
         JSON.stringify([...saveInLOcal, form])
       );
       setForm(INITIAL_FORM_DATA);
+      navigate(-1);
     }
   };
 

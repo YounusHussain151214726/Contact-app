@@ -8,7 +8,6 @@ const DetailPage = () => {
   const navigate = useNavigate();
   const { id } = params;
   const [isEdit, setIsEdit] = useState(false);
-
   const [getFromlocal, setGetFromLocal] = useState([]);
 
   useEffect(() => {

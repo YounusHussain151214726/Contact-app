@@ -12,9 +12,6 @@ const Home = () => {
   const [searchField, setSearchField] = useState("");
   const [filteredValue, setFilteredValue] = useState([]);
 
-
-
-
   //get data from local
   useEffect(() => {
     if (localStorage.getItem("addToContact")) {
@@ -44,8 +41,6 @@ const Home = () => {
     navigate("/addContact");
   };
 
-  console.log(filteredValue.sort())
-
   return (
     <>
       <Search
@@ -56,7 +51,7 @@ const Home = () => {
       />
 
       {preventLocalValue.length === 0 || filteredValue.length === 0 ? (
-<>
+        <>
           <Norecord />
         </>
       ) : (

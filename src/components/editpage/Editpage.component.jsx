@@ -19,8 +19,9 @@ const EditPage = ({ data }) => {
     email: data.email,
     phone: data.phone,
   });
-  const [saveInLOcal, setSaveInLocal] = useState([]);
+
   const [getFromlocal, setGetFromLocal] = useState([]);
+
   useEffect(() => {
     if (localStorage.getItem("addToContact")) {
       setGetFromLocal(JSON.parse(localStorage.getItem("addToContact")));
@@ -32,6 +33,7 @@ const EditPage = ({ data }) => {
     navigate(-1);
   };
 
+  //user input
   const handleData = (e) => {
     const inp = e.target.value.trim();
     setForm({ ...form, [e.target.name]: inp });
@@ -39,12 +41,11 @@ const EditPage = ({ data }) => {
 
   //edit
   const SaveEdit = () => {
-    if (form.fname && form.lname && form.phone && form.email !== "") {
-      localStorage.setItem(
-        "addToContact",
-        JSON.stringify([...saveInLOcal, form])
-      );
-    }
+    const forDel = getFromlocal.filter((a) => {
+      return a.email !== id;
+    });
+    localStorage.setItem("addToContact", JSON.stringify([...forDel, form]));
+    navigate(-1);
   };
 
   return (
